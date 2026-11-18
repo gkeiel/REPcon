@@ -7,11 +7,11 @@ The library implements PREP controllers using a **first-order low-pass filter** 
 The library is intended as a practical reference for implementing, testing, and applying repetitive control algorithms in embedded systems, particularly on **8-bit AVR microcontrollers** such as the ATmega328P. Furthermore, the sampling period is configured by the user and must match the actual interval between consecutive calls to the controller.
 
 
-## REP controller
+## PREP controller
 
 The continuous-time proportional-repetitive controller is defined by:
 
-$$C_{PREP}(s) = k_p +k_r\left(1 + Q(s)e^{-\tau s}\right)$$
+$$C_{PREP}(s) = k_p +\frac{k_r}{1 -Q(s)e^{-\tau s}}$$
 
 where:
 - $k_p$ is the proportional gain;
